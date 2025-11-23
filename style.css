@@ -46,7 +46,7 @@ header nav a {
     white-space: nowrap; 
     padding: 10px 15px;
     border-radius: 8px;
-    background-color: #3f72af; /* اللون الأزرق الغامق */
+    background-color: #333; /* اللون الأزرق الغامق */
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -55,7 +55,7 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #1e3a8a;
+    background-color: #000000;
 }
 
 /* --- 3. تنسيقات المحتوى الرئيسية والقسم الرئيسي (Hero) --- */
