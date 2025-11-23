@@ -228,3 +228,51 @@ main {
 .animal-cell {
     background-color: #FFF3E0;
     border: 2px solid #FFB74D;
+}
+/* --- تنسيق خاص بصفحة التواصل (contact.html) --- */
+
+/* تنسيق مجموعة الحقول (Label + Input/Textarea) */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر فوق بعض */
+}
+
+/* تنسيق العنوان (Label) */
+.form-group label {
+    font-weight: bold;
+    color: #1a535c; /* نفس لون عناوين الهيدر */
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+/* تنسيق حقول الإدخال والنص (Input/Textarea) */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%; /* عرض كامل داخل الـ content-container */
+    box-sizing: border-box; /* يخلي الـ padding ما يزيد عن عرض الـ 100% */
+    font-family: 'Cairo', sans-serif; /* الخط يكون متناسق */
+}
+
+/* تنسيق الزر للإرسال */
+.submit-button {
+    background-color: #3f72af; /* نفس لون أزرار التنقل */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #1e3a8a; /* لون أغمق عند المرور بالماوس */
+}
