@@ -174,105 +174,28 @@ main {
     height: 100%;
 }
 
-.example-box {
-    background-color: #f9f9f9; 
-    border-right: 4px solid #00796B; 
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
+/* تأكد من إضافة أي تنسيقات إضافية هنا */
 
-.example-box h3 {
-    color: #00796B;
-    margin-top: 0;
-    margin-bottom: 5px;
-    border-bottom: none;
-    font-size: 20px;
+/* مثال على تنسيق جديد لعنصر غير موجود سابقًا */
+.selector {
+    margin: 0; /* <-- make sure every property has a colon and value */
 }
-.content-container table {
-    width: 100%; 
-    border-collapse: collapse; 
-    margin-top: 20px;
-}
-
-.content-container th, .content-container td {
-    border: 1px solid #ddd; 
-    padding: 12px;
-    text-align: right;
-}
-
-.content-container th {
-    background-color: #00796B; 
+/* --- 6. تنسيق الفوتر (أسفل الصفحة) - تأكيد التعديل --- */
+footer {
+    background-color: #333;
     color: white;
-    font-weight: bold;
-}
-
-.content-container tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.cell-types {
-    display: flex; 
-    justify-content: space-around; 
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.type-box {
-    width: 45%; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.animal-cell {
-    background-color: #FFF3E0;
-    border: 2px solid #FFB74D;
-}
-/* --- تنسيق خاص بصفحة التواصل (contact.html) --- */
-
-/* تنسيق مجموعة الحقول (Label + Input/Textarea) */
-.form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column; /* ترتيب العناصر فوق بعض */
-}
-
-/* تنسيق العنوان (Label) */
-.form-group label {
-    font-weight: bold;
-    color: #1a535c; /* نفس لون عناوين الهيدر */
-    margin-bottom: 8px;
-    font-size: 1.1em;
-}
-
-/* تنسيق حقول الإدخال والنص (Input/Textarea) */
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    width: 100%; /* عرض كامل داخل الـ content-container */
-    box-sizing: border-box; /* يخلي الـ padding ما يزيد عن عرض الـ 100% */
-    font-family: 'Cairo', sans-serif; /* الخط يكون متناسق */
-}
-
-/* تنسيق الزر للإرسال */
-.submit-button {
-    background-color: #3f72af; /* نفس لون أزرار التنقل */
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    text-align: center; /* **الأهم للتوسيط** */
+    padding: 15px; 
+    position: relative; /* ممكن نغيرها من static إلى relative للتأكد */
+    bottom: 0;
     width: 100%;
+    margin-top: 40px; 
+    z-index: 10; /* عشان نضمن إنه فوق أي شيء ثاني */
 }
 
-.submit-button:hover {
-    background-color: #1e3a8a; /* لون أغمق عند المرور بالماوس */
+/* الكود الخاص بإخفاء زر الدردشة تماماً وتوسيط النص */
+.tawk-bubble-container,
+#tawkchat-iframe-container {
+    display: none !important; /* **هذا أقوى كود لإخفائه** */
+    visibility: hidden !important;
 }
