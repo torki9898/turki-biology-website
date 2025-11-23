@@ -1,103 +1,115 @@
-/* تنسيقات عامة للجسم والخط */
-/* تنسيقات عامة للجسم والخط (الخط واللون الجديد) */
+/* --- 1. تنسيقات عامة للجسم والخط --- */
 body {
     font-family: 'Cairo', sans-serif; /* نوع الخط الجديد: القاهرة */
     margin: 0;
     padding: 0;
     background-color: #f8f9fa; /* خلفية أفتح وأكثر نظافة */
-    color: #495057; /* لون نص أساسي رمادي داكن (أجمل من #333) */
+    color: #495057; /* لون نص أساسي رمادي داكن */
     text-align: right;
     line-height: 1.7; /* مسافة بين الأسطر عشان القراءة تكون أسهل */
 }
-/* تنسيق الهيدر (رأس الصفحة) */
-.topics h3 {
-    text-align: center;
-    color: #556B2F; /* لون أخضر زيتوني */
-    margin-bottom: 30px;
-    font-size: 28px;
-    font-weight: 800; /* عشان يصير عريض أكثر مع خط القاهرة */
+
+/* --- 2. تنسيقات الهيدر (رأس الصفحة) وقائمة التنقل (Nav) --- */
+
+header {
+    background-color: #ffffff; /* الخلفية البيضاء */
+    padding: 20px;
+    border-bottom: 3px solid #1a535c; /* خط سفلي فاصل */
+    
+    /* جعل الهيدر حاوية مرنة */
+    display: flex;
+    flex-direction: column; /* ترتيب العنوان والقائمة تحت بعض */
+    align-items: center; /* توسيط كل العناصر (العنوان والقائمة) */
+    gap: 15px; /* مسافة بين العنوان والقائمة */
 }
 
-/* تنسيق شريط التنقل (القائمة) */
-nav a {
+/* تنسيق عنوان الصفحة في الهيدر */
+header h1 {
+    color: #1a535c;
+    font-size: 2em;
+    margin: 0; 
+}
+
+/* تنسيق قائمة التنقل (Nav) لتوزيع الأزرار - **تم الدمج والتصحيح هنا** */
+header nav {
+    width: 100%; 
+    max-width: 1000px;
+    display: flex; 
+    justify-content: center; /* توسيط الأزرار */
+    align-items: center;
+    flex-wrap: wrap; /* يسمح للأزرار تنزل لسطر جديد */
+    gap: 10px; /* مسافة صغيرة بين الأزرار */
+}
+
+/* تنسيق الروابط داخل القائمة (شكل الأزرار) - **تم الدمج والتصحيح هنا** */
+header nav a {
+    white-space: nowrap; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #3f72af; /* اللون الأزرق الغامق */
     color: white;
     text-decoration: none;
-    margin-left: 15px;
-    font-weight: bold;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-size: 0.95em;
 }
 
-/* تنسيق المحتوى الرئيسي */
+header nav a:hover {
+    background-color: #1e3a8a;
+}
+
+/* --- 3. تنسيقات المحتوى الرئيسية والقسم الرئيسي (Hero) --- */
 main {
     padding: 20px;
 }
 
-/* تنسيق قسم البطل (Hero Section) */
 .hero {
-    background-color: #E0F2F1; /* لون فاتح للخلفية */
+    background-color: #E0F2F1; 
     padding: 40px;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* تنسيق الزر (Button) */
+/* تنسيق الزر (Button) - **تم تعديل لون النص إلى الأسود (#000) هنا** */
 .hero button {
     background-color: #FFC107; /* لون أصفر جذاب */
-    color: #333;
+    color: #000; /* **تم التغيير إلى الأسود الصريح** */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 15px;
+    font-weight: bold; /* زيادة سماكة الخط ليصبح أوضح */
 }
 
-/* تنسيق الفوتر (أسفل الصفحة) */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed; /* يخليه ثابت في الأسفل */
-    bottom: 0;
-    width: 100%;
-}
+/* --- 4. تنسيقات قسم مواضيع البيولوجيا (البطاقات) --- */
 
-/* ---------------------------------- */
-/* تنسيقات قسم مواضيع البيولوجيا (البطاقات) */
-/* ---------------------------------- */
-
-/* تنسيق قسم المواضيع */
 .topics {
-    padding: 20px 0; /* مسافة داخلية من الأعلى والأسفل */
+    padding: 20px 0;
 }
 
 .topics h3 {
-    text-align: center; /* العنوان يكون في المنتصف */
-    color: #00796B; /* نفس لون الهيدر عشان يكون متناسق */
-    margin-bottom: 30px; /* مسافة تحت العنوان */
+    text-align: center; 
+    color: #00796B; /* تم توحيده مع لون العناوين الداخلية */
+    margin-bottom: 30px; 
     font-size: 28px;
+    font-weight: 800;
 }
+/* هنا تم إلغاء الكود القديم اللي كان يكرر .topics h3 ويستخدم لون مختلف (#556B2F) */
 
-/* تنسيق القائمة نفسها (<ul>) */
+
 .topics ul {
-    list-style: none; /* نشيل النقاط الأساسية */
+    list-style: none;
     padding: 0;
-    display: flex; /* نخلي العناصر جنب بعض */
-    flex-wrap: wrap; /* إذا كانت العناصر كثيرة تنزل لسطر جديد */
-    justify-content: center; /* توسيط العناصر */
-    gap: 20px; /* مسافة بين كل مربع ومربع */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* تنسيق كل عنصر في القائمة (<li>) */
-.topics ul li {
-    /* هنا ما نحط تنسيق عشان التنسيق بيكون على الرابط (<a>) اللي داخله */
-    padding: 0;
-}
-
-/* تنسيق الروابط داخل القائمة (البطاقة الفعلية) */
 .topics ul li a {
-    /* تنسيقات شكل البطاقة */
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -107,56 +119,48 @@ footer {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color: #555; /* لون النص الرمادي */
+    color: #555;
     transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-
-    /* إزالة خط تحت الرابط وتكبير حجم المنطقة القابلة للضغط */
-    text-decoration: none; /* إزالة الخط الأزرق تحت النص */
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 80px;
 }
 
-/* حركة عند المرور بالماوس على البطاقة */
 .topics ul li a:hover {
-    transform: translateY(-5px); /* يرتفع شوي لما تمرر الماوس */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ظل أوضح */
-    color: #00796B; /* يتغير لون النص للون الهيدر (الأخضر) */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #00796B;
 }
 
-/* ملاحظة: الكود اللي كان موجود بالأسفل وتكرر حذفناه عشان ما يلخبط الشغل. */
-/* تنسيقات خاصة بصفحات المحتوى الداخلية (مثل genetics.html) */
+/* --- 5. تنسيقات خاصة بصفحات المحتوى الداخلية (باقي الصفحات) --- */
 
-/* حاوية توسيط المحتوى */
 .content-container {
-    max-width: 800px; /* عرض أقصى للمحتوى عشان ما يكون ممتد زيادة */
-    margin: 20px auto; /* توسيط الحاوية في الصفحة */
+    max-width: 800px; 
+    margin: 20px auto; 
     padding: 20px;
-    background-color: white; /* خلفية بيضاء للمحتوى */
+    background-color: white; 
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* تنسيق عناوين الأقسام الفرعية */
 .content-container h2 {
-    color: #00796B; /* لون العنوان أخضر زي تصميم الموقع */
-    border-bottom: 2px solid #E0F2F1; /* خط خفيف تحت العنوان */
+    color: #00796B;
+    border-bottom: 2px solid #E0F2F1;
     padding-bottom: 10px;
     margin-top: 30px;
 }
 
-/* تنسيق الفقرات */
 .content-container p {
-    line-height: 1.8; /* مسافة بين الأسطر عشان القراءة تكون مريحة */
+    line-height: 1.8;
     font-size: 16px;
 }
 
-/* تنسيق الفيديو عشان يكون متجاوب مع الشاشة */
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* نسبة 16:9 للفيديو */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     margin-top: 20px;
@@ -169,10 +173,10 @@ footer {
     width: 100%;
     height: 100%;
 }
-/* تنسيق صندوق الأمثلة في صفحة التطور */
+
 .example-box {
-    background-color: #f9f9f9; /* خلفية فاتحة للتركيز */
-    border-right: 4px solid #00796B; /* خط أخضر على اليمين يميزه */
+    background-color: #f9f9f9; 
+    border-right: 4px solid #00796B; 
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -182,140 +186,45 @@ footer {
     color: #00796B;
     margin-top: 0;
     margin-bottom: 5px;
+    border-bottom: none;
     font-size: 20px;
 }
-/* تنسيق الجداول في صفحات المحتوى */
 .content-container table {
-    width: 100%; /* عرض الجدول يملأ الحاوية */
-    border-collapse: collapse; /* إزالة المسافة بين حدود الخلايا */
+    width: 100%; 
+    border-collapse: collapse; 
     margin-top: 20px;
 }
 
 .content-container th, .content-container td {
-    border: 1px solid #ddd; /* حدود خفيفة */
+    border: 1px solid #ddd; 
     padding: 12px;
-    text-align: right; /* محاذاة النص لليمين */
+    text-align: right;
 }
 
 .content-container th {
-    background-color: #00796B; /* خلفية خضراء لرأس الجدول */
+    background-color: #00796B; 
     color: white;
     font-weight: bold;
 }
 
-/* تنسيق بسيط لسطر وترك سطر بلون مختلف */
 .content-container tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-/* تنسيق قسم أنواع الخلايا في صفحة cells.html */
+
 .cell-types {
-    display: flex; /* ترتيب الصناديق جنب بعض */
-    justify-content: space-around; /* توزيع المسافات بينها */
+    display: flex; 
+    justify-content: space-around; 
     gap: 20px;
     margin-top: 20px;
 }
 
 .type-box {
-    width: 45%; /* عرض الصندوق */
+    width: 45%; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* تنسيق خاص للخلية الحيوانية */
 .animal-cell {
-    background-color: #FFF3E0; /* لون بيج فاتح */
-    border: 2px solid #FFB74D; /* إطار برتقالي */
-}
-
-/* تنسيق خاص للخلية النباتية */
-.plant-cell {
-    background-color: #E8F5E9; /* لون أخضر فاتح جداً */
-    border: 2px solid #66BB6A; /* إطار أخضر فاتح */
-}
-
-.type-box h3 {
-    color: #00796B; /* نفس لون العناوين الرئيسية */
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-/* تنسيق القوائم داخل الصناديق */
-.features-list {
-    list-style-type: none; /* إزالة النقاط الافتراضية */
-    padding: 0;
-    margin-top: 10px;
-}
-
-.features-list li {
-    background: #f7f7f7; /* خلفية خفيفة لكل عنصر */
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-/* تنسيق قسم مكونات الـ DNA */
-
-/* تنسيق قائمة المكونات */
-.components-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.components-list li {
-    background-color: #E8EAF6; /* لون خلفية أزرق فاتح جداً */
-    color: #3F51B5; /* لون نص أزرق مميز */
-    padding: 10px 15px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    border-right: 5px solid #3F51B5; /* خط جانبي أزرق */
-    font-weight: bold;
-}
-
-/* تنسيق صندوق الملاحظة */
-.note-box {
-    background-color: #FFFDE7; /* لون أصفر فاتح للملاحظات */
-    border: 1px solid #FFEB3B;
-    padding: 15px;
-    border-radius: 5px;
-    margin: 15px 0;
-    color: #616161;
-}
-
-/* تنسيق صور الـ DNA */
-.dna-image {
-    max-width: 100%; /* عشان الصورة ما تتعدى عرض الحاوية */
-    height: auto; /* للحفاظ على أبعاد الصورة */
-    display: block; /* عشان تكون في سطر لحالها ويضبط عليها الـ margin */
-    margin: 25px auto; /* توسيط الصورة من اليمين واليسار */
-    border-radius: 10px; /* زوايا دائرية خفيفة */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-}
-/* تنسيق صندوق صيغة البناء الضوئي في صفحة plants.html */
-.formula-box {
-    background-color: #F1F8E9; /* لون أخضر فاتح جداً */
-    border: 1px solid #C8E6C9; /* إطار أخضر فاتح */
-    padding: 15px;
-    border-radius: 8px;
-    margin: 20px 0;
-    text-align: center; /* توسيط النص داخل الصندوق */
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.formula-box h3 {
-    color: #388E3C; /* لون أخضر داكن */
-    margin-top: 0;
-    margin-bottom: 10px;
-    border-bottom: none;
-}
-
-/* تنسيق قائمة أدوار النباتات */
-.role-list {
-    list-style-type: '🌱 '; /* نستخدم إيموجي كعلامة نقطية */
-    padding-right: 25px; /* مسافة عشان الإيموجي يكون واضح */
-}
-
-.role-list li {
-    margin-bottom: 10px;
-}
+    background-color: #FFF3E0;
+    border: 2px solid #FFB74D;
