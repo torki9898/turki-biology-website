@@ -21,6 +21,9 @@ header {
     flex-direction: column; /* ترتيب العنوان والقائمة تحت بعض */
     align-items: center; /* توسيط كل العناصر (العنوان والقائمة) */
     gap: 15px; /* مسافة بين العنوان والقائمة */
+
+    /* ** التنسيقات المضافة من الكود المكرر ** */
+    position: relative; /* هذا ضروري لزر رواد الوطن */
 }
 
 /* تنسيق عنوان الصفحة في الهيدر */
@@ -176,11 +179,7 @@ main {
 
 /* تأكد من إضافة أي تنسيقات إضافية هنا */
 
-/* مثال على تنسيق جديد لعنصر غير موجود سابقًا */
-.selector {
-    margin: 0; /* <-- make sure every property has a colon and value */
-}
-/* --- 6. تنسيق الفوتر (أسفل الصفحة) - تأكيد التعديل --- */
+
 footer {
     background-color: #333;
     color: white;
@@ -198,4 +197,271 @@ footer {
 #tawkchat-iframe-container {
     display: none !important; /* **هذا أقوى كود لإخفائه** */
     visibility: hidden !important;
+}
+
+/* --- 7. تنسيقات خاصة بصفحة التواصل (contact.html) --- */
+
+.contact-form {
+    padding: 20px 0;
+}
+
+/* تنسيق مجموعة الحقول */
+.form-group {
+    margin-bottom: 20px; /* مسافة بين كل حقل */
+}
+
+/* تنسيق الـ Label (اسم الحقل) */
+.form-group label {
+    display: block; /* يخلي الاسم ياخذ سطر كامل */
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a535c; /* نفس لون عنوان الهيدر */
+}
+
+/* تنسيق حقول الإدخال (Input و Textarea) */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%; /* تملأ المساحة المتاحة بالكامل */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* يخلي الـ padding داخل عرض الـ input */
+    font-size: 16px;
+    transition: border-color 0.3s;
+    font-family: 'Cairo', sans-serif; /* عشان الخط يشتغل داخل الحقول */
+}
+
+/* تأثير الـ Focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #00796B; /* لون حيوي لما يضغط المستخدم على الحقل */
+    outline: none; /* إزالة الإطار الافتراضي */
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.3);
+}
+
+/* تنسيق زر الإرسال */
+.submit-button {
+    background-color: #1a535c; /* لون مميز وداكن */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    width: 100%; /* يملأ العرض بالكامل ليكون واضح */
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #000000; /* يصير أسود عند المرور عليه */
+}
+/* --- 8. تنسيقات خاصة بصفحات المحتوى البيولوجي (مثل dna.html) --- */
+
+/* تنسيق قسم التعريف في بداية كل صفحة */
+.content-container .intro {
+    background-color: #F9FBE7; /* لون فاتح يركز على المحتوى */
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-right: 5px solid #00796B; /* شريط أخضر على اليمين يميزه */
+}
+
+/* تنسيق العناوين داخل أقسام المحتوى */
+.content-container section h2 {
+    color: #1a535c; /* نفس لون عنوان الهيدر تقريباً */
+    border-bottom: 2px solid #E0F2F1;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* تنسيق قائمة المكونات (النيوكليوتيدات) */
+.content-container ol.components-list {
+    margin-right: 20px; /* إزاحة القائمة المرقمة لليمين */
+    list-style-type: arabic-indic; /* استخدام الأرقام العربية */
+}
+
+.content-container ol.components-list li {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* تنسيق قائمة القواعد النيتروجينية الداخلية */
+.content-container ol.components-list li ul {
+    list-style: disc; /* استخدام نقطة (قرص) */
+    margin-right: 20px;
+    margin-top: 5px;
+    font-weight: normal; /* إلغاء التسميك داخل القائمة الداخلية */
+    line-height: 1.5;
+}
+
+.content-container p {
+    line-height: 1.8;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+/* تنسيق خاص لشرح الـ DNA (الحلزون المزدوج) */
+.double-helix {
+    background-color: #f0f7f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* --- 11. تنسيقات خاصة بصفحة من نحن (about.html) --- */
+
+.about-page .mission p {
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.profile-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center; /* توسيط محتوى البطاقة */
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid #1a535c;
+}
+
+.profile-card p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.tech-list {
+    list-style: square; /* نوع تنقيط مختلف */
+    margin-right: 20px;
+    font-size: 1em;
+    line-height: 2;
+}
+
+header {
+    background-color: #ffffff; 
+    padding: 20px;
+    border-bottom: 3px solid #1a535c; 
+    
+    /* ***** التعديل الجديد هنا ***** */
+    position: relative; /* مهم عشان نقدر نتحكم بموقع الزر الأيمن */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+}
+/* --- 13. تنسيقات خاصة بزر الزاوية (رواد الوطن) --- */
+.top-corner-link {
+    position: absolute; /* يخليه يتحرك بحرية داخل الـ Header */
+    top: 10px; /* نزله 10 بكسل من الأعلى */
+    right: 20px; /* بعده 20 بكسل عن اليمين */
+    z-index: 20; /* عشان يضمن إنه فوق كل شيء */
+}
+
+.top-corner-link a {
+    /* تنسيق نفس تنسيق الأزرار في الـ nav لكن بلون مختلف */
+    white-space: nowrap;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #333; /* لون أصفر مميز */
+    color: #fff4f4;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    border: 1px solid #333;
+}
+
+.top-corner-link a:hover {
+    background-color: #0a0908;
+}
+/* --- 12. تنسيقات خاصة بصفحة رواد الوطن (pioneers.html) - تصميم البطاقات --- */
+
+/* تأكيد تنسيق الحاوية الرئيسية */
+.content-container.school-section {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+.school-section h2 {
+    text-align: center;
+    color: #1a535c;
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+/* تنسيق بطاقة معلومات المدرسة */
+.info-details {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f7f9f9; 
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-right: 5px solid #00796B;
+}
+
+.info-details strong {
+    color: #00796B; 
+    font-weight: 700;
+}
+
+.info-details p {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+
+/* تنسيق بطاقة أهداف المشروع */
+.project-goals {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #1a535c; 
+}
+
+.project-goals h3 {
+    color: #1a535c;
+    font-size: 1.5em;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.goals-list {
+    list-style: none; 
+    padding: 0;
+    margin-top: 15px;
+}
+
+.goals-list li {
+    padding: 8px 0;
+    position: relative;
+    font-size: 1em;
+}
+
+.goals-list li::before {
+    content: "✅"; 
+    position: absolute;
+    right: -25px;
+    top: 5px;
+    font-size: 1.1em;
 }
